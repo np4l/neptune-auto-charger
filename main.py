@@ -116,7 +116,7 @@ async def begin_charge(
         "openId": OPEN_ID,
         "beforemoney": money,
         "devtypeid": device_info.get("devtypeid", 40),
-        "fullStop": 0,
+        "fullStop": 1,
         "payType": 1,
         "safeOpen": 0,
         "safeCharge": device_info.get("safeCharge", 9),
