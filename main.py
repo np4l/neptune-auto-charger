@@ -111,21 +111,21 @@ async def begin_charge(
     params = {
         "devaddress": devaddress,
         "port": port,
-        "money": money,
+        "money": "7",
         "areaId": AREA_ID,
         "openId": OPEN_ID,
         "beforemoney": money,
         "devtypeid": device_info.get("devtypeid", 40),
-        "fullStop": 1,
-        "payType": 1,
-        "safeOpen": 0,
+        "fullStop": "0",                # 智能断电
+        "payType": "1",                 # 余额支付
+        "safeOpen": str(device_info.get("safeOpen", 0)),
         "safeCharge": device_info.get("safeCharge", 9),
-        "edtType": 0,
+        "edtType": "0",
         "efee": device_info.get("efee", 110),
         "eCharge": device_info.get("eCharge", 55),
         "serviceCharge": device_info.get("serviceCharge", 55),
-        "userId": 0,
-        "yuan7": 0,
+        "userId": "0",
+        "yuan7": "0",                   # 0 代表充满自停
     }
 
     # 第一次调用 - 获取 msgflag
